@@ -9,9 +9,9 @@ export default function Footer() {
         target="_blank"
         id="git-hub"
       >
-        Open source code
+        Open source code  
       </a>
-      by Kylee San Miguel
+         by Kylee San Miguel
     </footer>
   );
 }
