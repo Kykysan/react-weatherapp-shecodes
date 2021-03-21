@@ -21,12 +21,12 @@ export default function Weather() {
       <p className="currentTemperature">
         <span id="current-temperature">{weatherData.temperature}</span>
         <span className="celsius">
-          <a href="#" id="celsius-link" className="active">
+          <a href="some/valid/uri" id="celsius-link" className="active">
             °C |
           </a>
         </span>
         <span className="fahrenheit">
-          <a href="#" id="fahrenheit-link">
+          <a href="some/valid.uri" id="fahrenheit-link">
             {" "}
             °F{" "}
           </a>
