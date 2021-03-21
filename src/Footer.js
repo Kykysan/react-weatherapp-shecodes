@@ -4,9 +4,10 @@ import "./Footer.css";
 export default function Footer() {
   return (
     <footer>
-      <a
+      <a 
         href="https://github.com/Kykysan/react-weatherapp-shecodes"
         target="_blank"
+        rel="noreferrer"
         id="git-hub"
       >
         Open source code  
