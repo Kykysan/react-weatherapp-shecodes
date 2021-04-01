@@ -5,9 +5,8 @@ import Forecast from "./Forecast";
 import Footer from "./Footer";
 import "./Weather.css";
 
-export default function Weather() {
-  const [weatherData, setWeatherData] = useState ({});
-  const [ready, setReady] = useState(false);
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState ({ ready : false});
 
   function handleResponse (response){
     setWeatherData({
@@ -16,11 +15,12 @@ export default function Weather() {
       city: response.data.name,
       humditiy: response.data.main.humditiy,
       description: response.data.weather[0].main,
+      ready: true,
     })
-    setReady(true);
+  
   }
   
-  if (ready){
+  if (weatherData.ready){
     return (
     <div className="container">
       <Search />
@@ -69,8 +69,7 @@ export default function Weather() {
   } else {
 
   const apiKey= "75d7bfe843745f5a8219306b602ef7d5";
-  let city = "Phoenix";
-  let apiURL= `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiURL= `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(handleResponse);
   
   return "Loading...";
