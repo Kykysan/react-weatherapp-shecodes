@@ -9,13 +9,13 @@ export default function Weather() {
   const [weatherData, setWeatherData] = useState ({});
   const [ready, setReady] = useState(false);
 
-  function handleResponse (response {
+  function handleResponse (response){
     setWeatherdata({
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
     })
-  })
+  }
   
   if (ready){
     return (
@@ -23,7 +23,7 @@ export default function Weather() {
       <Search />
       <h1>{weatherData.name} </h1>
       <p className="currentTemperature">
-        <span id="current-temperature">{Math.round(weatherData.temperature)</span>
+        <span id="current-temperature">{Math.round(weatherData.temperature)}</span>
         <span className="celsius">
           <a href="some/valid/uri" id="celsius-link" className="active">
             °C |
