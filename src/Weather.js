@@ -10,7 +10,7 @@ export default function Weather() {
   const [ready, setReady] = useState(false);
 
   function handleResponse (response){
-    setWeatherdata({
+    setWeatherData({
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
