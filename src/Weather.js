@@ -15,13 +15,14 @@ export default function Weather() {
       wind: response.data.wind.speed,
       city: response.data.name,
     })
+    setReady(true);
   }
   
   if (ready){
     return (
     <div className="container">
       <Search />
-      <h1>{weatherData.name} </h1>
+      <h1>{weatherData.city}</h1>
       <p className="currentTemperature">
         <span id="current-temperature">{Math.round(weatherData.temperature)}</span>
         <span className="celsius">
@@ -53,7 +54,7 @@ export default function Weather() {
               <i class="fas fa-tint"></i>
               <br />
               Wind:
-              <span id="wind-speed"> {weatherData.wind}</span>
+              <span id="wind-speed"> {Math.round(weatherData.wind)}</span>
               mph <i class="fas fa-wind"></i>
             </div>
           </div>
