@@ -14,6 +14,8 @@ export default function Weather() {
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
+      humditiy: response.data.main.humditiy,
+      description: response.data.weather[0].main,
     })
     setReady(true);
   }
@@ -45,12 +47,12 @@ export default function Weather() {
           <div className="col-6">
             <span id="current-date"> Sat Mar 27 </span>
             <br />
-            <span id="description"> Sunny </span>
+            <span id="description">{weatherData.description}</span>
           </div>
           <div className="col-6">
             <div className="humidity">
               Humidity:
-              <span id="humidity"> 10 </span>%{" "}
+              <span id="humidity"> {weatherData.humditiy}</span>%{" "}
               <i class="fas fa-tint"></i>
               <br />
               Wind:
