@@ -1,20 +1,16 @@
+import React, {useState} from "react";
+import axios from "axios";
 import Search from "./Search";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 import "./Weather.css";
 
 export default function Weather() {
-  let weatherData = {
-    city: "Phoenix",
-    temperature: 20,
-    date: "Monday 10:00",
-    description: "Sunny",
-    humidity: 17,
-    wind: 5,
-    icon: <i class="fas fa-sun"></i>
-  };
+  const apiKey= "75d7bfe843745f5a8219306b602ef7d5";
+  let city = "Phoenix";
+  let apiURL= `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-  return (
+  return 
     <div className="container">
       <Search />
       <h1> {weatherData.city} </h1>
@@ -59,5 +55,4 @@ export default function Weather() {
       <Forecast />
     <Footer />
     </div>
-  );
-}
+  );}
