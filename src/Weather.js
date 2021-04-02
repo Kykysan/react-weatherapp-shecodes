@@ -8,6 +8,7 @@ import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState ({ ready : false});
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse (response){
     setWeatherData({
@@ -15,28 +16,55 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       city: response.data.name,
       humditiy: response.data.main.humditiy,
-      description: response.data.weather[0].main,
+      description: response.data.weather[0].description,
       date: new Date(response.data.dt*1000),
       ready: true,
-    })
-  
+    });  
+  }
+
+  function handleSubmit(event){
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event){ 
+    setCity(event.target.value);
+  }
+
+  function search(){
+  const apiKey= "75d7bfe843745f5a8219306b602ef7d5";
+  let apiURL= `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(handleResponse);
   }
   
   if (weatherData.ready){
     return (
     <div className="container">
-      <Search />
+      <form className="searchEngine" id="search-engine" onSubmit={handleSubmit}>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Enter City"
+        autofocus="on"
+        onChange={handleCityChange}
+      />
+      <button className="searchButton" type="submit">
+        <i class="fas fa-search-location"></i>
+      </button>
+      <button
+        className="currentLocationButton"
+        id="location-button"
+        type="submit"
+      >
+        <i class="fas fa-map-marked-alt"></i>
+      </button>
+    </form>
       <WeatherInfo data={weatherData}/>
       <Forecast />
      <Footer />
     </div>
     );
   } else {
-
-  const apiKey= "75d7bfe843745f5a8219306b602ef7d5";
-  let apiURL= `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiURL).then(handleResponse);
-  
-  return "Loading...";
-}
+    search();  
+  return "Loading...";}
 }
