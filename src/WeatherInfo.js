@@ -27,7 +27,7 @@ export default function WeatherInfo(props){
               <i class="fas fa-tint"></i>
               <br />
               Wind:
-              <span id="wind-speed">{Math.round(props.data.wind)}</span>
+              <span id="wind-speed"> {Math.round(props.data.wind)}</span>
               kph <i class="fas fa-wind"></i>
             </div>
           </div>
