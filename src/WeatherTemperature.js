@@ -41,8 +41,9 @@ export default function WeatherTemperature (props){
         <span id="current-temperature">{Math.round(fahrenheit)}</span>
         <span className="celsius">
           <a href="some/valid/uri" id="celsius-link" className="active" onClick={convertToCelsius}>
-            °C |
+            °C 
           </a>
+          |
         </span>
         <span className="fahrenheit">
           <a href="some/valid.uri" id="fahrenheit-link">
