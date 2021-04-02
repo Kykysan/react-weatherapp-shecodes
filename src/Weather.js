@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import Search from "./Search";
+import FormattedDate from "./FormattedDate";
 import Forecast from "./Forecast";
 import Footer from "./Footer";
 import "./Weather.css";
@@ -15,6 +16,7 @@ export default function Weather(props) {
       city: response.data.name,
       humditiy: response.data.main.humditiy,
       description: response.data.weather[0].main,
+      date: new Date(response.data.dt*1000),
       ready: true,
     })
   
@@ -45,7 +47,7 @@ export default function Weather(props) {
       <div className="currentForecast">
         <div className="row row-cols-auto">
           <div className="col-6">
-            <span id="current-date"> Sat Mar 27 </span>
+            <span id="current-date"> <FormattedDate date={weatherData.date}/> </span>
             <br />
             <span id="description">{weatherData.description}</span>
           </div>
