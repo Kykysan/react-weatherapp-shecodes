@@ -28,8 +28,7 @@ export default function WeatherInfo(props){
         <div className="row row-cols-auto">
           <div className="col-6">
             <span id="current-date"> <FormattedDate date={props.data.date}/> </span>
-            <br />
-            <span id="description">{props.data.description}</span>
+            <span className="text-captalize" id="description">{props.data.description}</span>
           </div>
           <div className="col-6">
             <div className="humidity">
