@@ -24,6 +24,11 @@ h4 {
   font-size: 18px;
   padding: 5px 0 0 35px;
 }
+
+.description {
+  text-transform: capitalize;
+}
+
 .humidity {
   padding: 0 0 0 120px;
 }
