@@ -1,0 +1,84 @@
+h1 {
+  font-size: 50px;
+  margin: 0 auto;
+  padding: 30px 0px 0px 35px;
+}
+
+form,
+p,
+h2,
+footer {
+  text-align: center;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 40px;
+}
+
+.currentForecast {
+  font-style: italic;
+  font-size: 18px;
+  padding: 5px 0 0 35px;
+}
+.humidity {
+  padding: 0 0 0 120px;
+}
+
+.currentTemperature {
+  font-size: 50px;
+  margin: 0 auto;
+}
+
+.celsius {
+  position: relative;
+}
+.celsius .active {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  position: relative;
+  top: -17px;
+}
+
+.fahrenheit {
+  font-size: 25px;
+  position: relative;
+  top: -17px;
+}
+
+.col-2 {
+  margin: 10px 80px 10px;
+}
+
+.col-sm-2:hover {
+  color: #b088f9;
+}
+
+#celsius-link {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  position: relative;
+  top: -17px;
+}
+
+#celsius-link:hover {
+  color: #93fffa;
+}
+
+#fahrenheit-link {
+  text-decoration: none;
+  color: #b088f9;
+}
+
+#fahrenheit-link:hover {
+  color: #93fffa;
+}
+
+#current-icon {
+  font-size: 100px;
+}
