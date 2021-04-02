@@ -43,8 +43,8 @@ export default function WeatherTemperature (props){
           <a href="some/valid/uri" id="celsius-link" className="active" onClick={convertToCelsius}>
             °C 
           </a>
-          |
         </span>
+        |
         <span className="fahrenheit">
           <a href="some/valid.uri" id="fahrenheit-link">
             {" "}
