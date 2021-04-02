@@ -12,7 +12,7 @@ export default function Footer() {
       >
         Open source code  
       </a>
-         by Kylee San Miguel
+         {" "}by Kylee San Miguel
     </footer>
   );
 }
