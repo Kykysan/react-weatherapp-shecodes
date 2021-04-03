@@ -4,7 +4,7 @@ import WeatherForecastDay from "./WeatherForecastDay"
 import "./Forecast.css";
 
 export default function Forecast(props) {
-  const [loaded, setLoaded] = usestate(false);
+  const [loaded, setLoaded] = useState(false);
   const[forecast, setForecast] = useState(null);
 
   function handleResponse(response){
