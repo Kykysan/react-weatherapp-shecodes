@@ -49,16 +49,6 @@ export default function Weather(props) {
         autofocus="on"
         onChange={handleCityChange}
       />
-      <button className="searchButton" type="submit">
-        <i class="fas fa-search-location"></i>
-      </button>
-      <button
-        className="currentLocationButton"
-        id="location-button"
-        type="submit"
-      >
-        <i class="fas fa-map-marked-alt"></i>
-      </button>
     </form>
       <WeatherInfo data={weatherData}/>
       <Forecast coordinates ={weatherData.coordinates} />
