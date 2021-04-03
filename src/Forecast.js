@@ -15,6 +15,7 @@ export default function Forecast(props) {
   if (loaded){
     return(
       <div className="WeatherForecast">
+        <h2>Forecast</h2>
         <div className="row">
           {forecast.map(function(dailyForecast,index){
             if(index <5){
