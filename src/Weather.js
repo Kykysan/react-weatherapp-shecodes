@@ -49,6 +49,9 @@ export default function Weather(props) {
         autofocus="on"
         onChange={handleCityChange}
       />
+      <button className="searchButton" type="submit">
+        Search
+      </button>
     </form>
       <WeatherInfo data={weatherData}/>
       <Forecast coordinates ={weatherData.coordinates} />
